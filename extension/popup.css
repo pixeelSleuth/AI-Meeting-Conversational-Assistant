@@ -1,0 +1,191 @@
+/* Using the SUSE font */
+@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@400;700&display=swap");
+
+body {
+    font-family: "SUSE", sans-serif;
+    background: #071f29;
+    color: #C0C0C0;
+    font-size: 14px;
+    width: 450px; /* Width for the popup */
+    padding: 1rem;
+    margin: 0;
+}
+
+h1, h2 {
+    color: white;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0; /* Updated: Margin handled by parent */
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #D1B5A3; /* UPDATED COLOR */
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+}
+
+p {
+    margin-top: 0;
+    line-height: 1.4;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #B7B9A8; /* UPDATED COLOR */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Added card-header style */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+input[type="file"], select {
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    padding: 0.5rem;
+    border: 1px solid #D1B5A3; /* UPDATED COLOR */
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: "SUSE", sans-serif;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+select {
+    /* Appearance for dropdown arrow */
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    padding-right: 2rem;
+}
+
+select option {
+    background: #071f29;
+    color: white;
+}
+
+/* Primary button style */
+button {
+    background: #D1B5A3; /* UPDATED COLOR */
+    color: #3D352A; /* UPDATED TEXT COLOR */
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    font-family: "SUSE", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Reusable secondary button style */
+.btn-secondary {
+    background: transparent;
+    color: #D1B5A3; /* UPDATED COLOR */
+    border: 1px solid #D1B5A3; /* UPDATED COLOR */
+    width: auto;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+/* Loading Spinner */
+#loading-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-left-color: #D1B5A3; /* UPDATED COLOR */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Results Content */
+.content-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 0.75rem;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: pre-wrap; /* Preserves whitespace and newlines */
+    font-size: 0.9rem;
+}
+
+/* Chat/RAG Area */
+#chat-window {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.chat-msg {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    max-width: 85%;
+    line-height: 1.4;
+}
+
+.user-msg {
+    background: #D1B5A3; /* UPDATED COLOR */
+    color: #3D352A; /* UPDATED TEXT COLOR */
+    align-self: flex-end;
+    margin: 0;
+}
+
+.bot-msg {
+    background: #333;
+    color: #E0E0E0;
+    align-self: flex-start;
+    margin: 0;
+}
+
+.chat-input-area {
+    display: flex;
+    margin-top: 0.75rem;
+    gap: 0.5rem;
+}
+
+#chat-input {
+    flex-grow: 1; /* Takes up remaining space */
+    padding: 0.5rem;
+    border: 1px solid #D1B5A3; /* UPDATED COLOR */
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: "SUSE", sans-serif;
+    margin: 0;
+}
+
+#send-question-button {
+    width: auto; /* Override default 100% width */
+    font-size: 0.9rem;
+    padding: 0 1rem;
+}

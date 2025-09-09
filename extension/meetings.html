@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Assistant — History</title> <style>
+        @import url("https://fonts.googleapis.com/css2?family=SUSE:wght@400;700&display=swap");
+
+        body {
+            font-family: "SUSE", sans-serif;
+            padding: 1.5rem 3rem;
+            color: #C0C0C0;
+            background: #071f29;
+            font-size: 1rem;
+        }
+
+        h1 {
+            margin: 0.5rem 0rem 1.5rem 0rem;
+            color: #D1B5A3; /* UPDATED COLOR */
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr; /* UPDATED: Was 2fr 1fr */
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .grid-container>* {
+            overflow-x: auto;
+        }
+
+        .card {
+            grid-column: 1;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 0rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #B7B9A8; /* UPDATED COLOR */
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding: 0 1.5rem; /* Added padding to match table */
+        }
+
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #a0a0a0;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D1B5A3; /* UPDATED COLOR */
+        }
+
+        hr {
+            margin: 1.5rem 0rem;
+            border: 1px solid #B7B9A8; /* UPDATED COLOR */
+        }
+
+        label {
+            display: block;
+            cursor: pointer;
+        }
+
+        button {
+            background: #D1B5A3; /* UPDATED COLOR */
+            color: #3D352A; /* UPDATED COLOR */
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-family: "SUSE", sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .meetings-section-header {
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #recover-last-meeting {
+            background: transparent;
+            color: #D1B5A3; /* UPDATED COLOR */
+            border: 1px solid #D1B5A3; /* UPDATED COLOR */
+            padding: 0.25rem 0.5rem;
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #B7B9A8; /* UPDATED COLOR */
+        }
+
+        th {
+            background: rgba(209, 181, 163, 0.1); /* UPDATED COLOR */
+            font-weight: bold;
+        }
+
+        .download-button {
+            background: transparent;
+            color: #D1B5A3; /* UPDATED COLOR */
+            border: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            cursor: pointer;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <h1>Meeting Conversational Assistant</h1> <div class="grid-container">
+        <div>
+            <div class="meetings-section-header">
+                 <h2>Last 10 meetings</h2>
+                 <button id="recover-last-meeting">Recover last meeting</button>
+            </div>
+            <div class="card">
+                <div class="transcripts-section">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Meeting title</th>
+                                <th>Meeting start time and duration</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transcripts-table">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+    <script src="meetings.js"></script>
+</body>
+
+</html>

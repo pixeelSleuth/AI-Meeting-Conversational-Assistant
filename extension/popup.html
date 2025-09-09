@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Analyzer</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="header">
+        <h1>AI Meeting Conversational Assistant</h1>
+    </div>
+
+    <div id="upload-section" class="card" style="display: none;"> <h2 id="upload-title">Process Transcript</h2>
+        <p id="upload-instructions">Upload a .txt transcript to begin.</p>
+        
+        <div id="file-input-wrapper">
+            <input type="file" id="transcript-file" accept=".txt">
+        </div>
+        
+        <label for="language-select">Select Language (for translation)</label>
+        <select id="language-select">
+            <option value="">No Translation</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="hi">Hindi</option>
+            <option value="ja">Japanese</option>
+            <option value="ar">Arabic</option>
+        </select>
+        
+        <button id="analyze-button">Analyze Meeting</button>
+    </div>
+
+    <div id="loading-section" class="card" style="display: none;">
+        <div class="spinner"></div>
+        <p>Analyzing transcript... This may take a moment.</p>
+    </div>
+
+    <div id="results-section" style="display: none;">
+        <div id="summary-card" class="card">
+            <div class="card-header">
+                <h2>Summary</h2>
+                <button id="download-summary-btn" class="btn-secondary">Download</button>
+            </div>
+            <div id="summary-content" class="content-box"></div>
+        </div>
+
+        <div id="translation-card" class="card" style="display: none;">
+            <h2>Translation</h2>
+            <div id="translation-content" class="content-box"></div>
+        </div>
+
+        <div id="rag-card" class="card">
+            <div class="card-header">
+                <h2>Ask About Your Meeting</h2>
+                <button id="download-chat-btn" class="btn-secondary">Download Chat</button>
+            </div>
+            <div id="chat-window" class="content-box">
+                </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Ask a question about the transcript...">
+                <button id="send-question-button">Send</button>
+            </div>
+            </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
